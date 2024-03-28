@@ -1,0 +1,26 @@
+server:
+  port: 8090
+  servlet:
+    context-path: /api/v1/auth-app
+
+spring:
+  application:
+    name: Spring Security App
+
+# Database configuration
+  datasource:
+    url:  ${DATABASE_URL}
+    driver-class-name: ${DATABASE_DRIVER_CLASS_NAME}
+    username: ${DATABASE_USER}
+    password: ${DATABASE_PASSWORD}
+    hikari:
+      schema: ${DATABASE_SCHEMA}
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+# Spring security config
+  # security:
+    #user:
+      #name: Jhon
+      #password: 1234
