@@ -19,8 +19,8 @@ spring:
     hibernate:
       ddl-auto: create-drop
     show-sql: false
-# Spring security config
-  # security:
-    #user:
-      #name: Jhon
-      #password: 1234
+  security:
+    jwt:
+      key:
+        private: ${SECRET}
+        user-generator: AUTH.JWT.O-BACKEND

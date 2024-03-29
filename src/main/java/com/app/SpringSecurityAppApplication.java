@@ -17,6 +17,8 @@ import java.util.Set;
 @SpringBootApplication
 public class SpringSecurityAppApplication implements CommandLineRunner {
 
+	private static  final String PASSWORD = "$2a$10$Nx6Q6/qqw/P1t15pCBffWekdNZYndDQ1Zox.21f5hTZiA7.Belwa.";
+
 	private final IUserRepository userRepository;
 
 	public static void main(String[] args) {
@@ -55,22 +57,22 @@ public class SpringSecurityAppApplication implements CommandLineRunner {
 
 		// Users
 		var adminJohn = UserEntity.builder()
-				.username("John").password("$2a$10$Nx6Q6/qqw/P1t15pCBffWekdNZYndDQ1Zox.21f5hTZiA7.Belwa.").accountNonExpired(true).accountNonLocked(true)
+				.username("John").password(PASSWORD).accountNonExpired(true).accountNonLocked(true)
 				.isEnabled(true)
 				.credentialNonExpired(true).roles(Set.of(roleAdmin)).build();
 
 		var devLorena = UserEntity.builder()
-				.username("Lorena").password("$2a$10$Nx6Q6/qqw/P1t15pCBffWekdNZYndDQ1Zox.21f5hTZiA7.Belwa.").accountNonExpired(true).accountNonLocked(true)
+				.username("Lorena").password(PASSWORD).accountNonExpired(true).accountNonLocked(true)
 				.isEnabled(true)
 				.credentialNonExpired(true).roles(Set.of(roleDev)).build();
 
 		var invitedPedro = UserEntity.builder()
-				.username("Pedro").password("$2a$10$Nx6Q6/qqw/P1t15pCBffWekdNZYndDQ1Zox.21f5hTZiA7.Belwa.").accountNonExpired(true).accountNonLocked(true)
+				.username("Pedro").password(PASSWORD).accountNonExpired(true).accountNonLocked(true)
 				.isEnabled(true)
 				.credentialNonExpired(true).roles(Set.of(roleInvited)).build();
 
 		var userJuan = UserEntity.builder()
-				.username("Juan").password("$2a$10$Nx6Q6/qqw/P1t15pCBffWekdNZYndDQ1Zox.21f5hTZiA7.Belwa.").accountNonExpired(true).accountNonLocked(true)
+				.username("Juan").password(PASSWORD).accountNonExpired(true).accountNonLocked(true)
 				.isEnabled(true)
 				.credentialNonExpired(true).roles(Set.of(roleUser)).build();
 

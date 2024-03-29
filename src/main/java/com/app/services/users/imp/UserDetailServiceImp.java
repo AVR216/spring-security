@@ -1,4 +1,4 @@
-package com.app.services.users;
+package com.app.services.users.imp;
 
 import com.app.persistence.entities.users.UserEntity;
 import com.app.persistence.repositories.users.IUserRepository;
