@@ -1,5 +1,6 @@
 package com.app.controller.auth;
 
+import com.app.controller.auth.dto.AuthCreateUserRequest;
 import com.app.controller.auth.dto.AuthLogin;
 import com.app.controller.auth.dto.AuthResponse;
 import com.app.controller.constants.RestConstants;
@@ -19,6 +20,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthController {
 
     private final ILoginUserService loginUser;
+
+    @PostMapping(path = {"/sign-up"})
+    ResponseEntity<AuthResponse> signUp(@RequestBody @Valid AuthCreateUserRequest authCreateUser) {
+        return new ResponseEntity<>(this.loginUser.signUp(authCreateUser), HttpStatus.CREATED);
+    }
 
     @PostMapping(path = {"/log-in"})
     public ResponseEntity<AuthResponse> login(@RequestBody @Valid AuthLogin userRequest) {

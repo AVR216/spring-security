@@ -33,7 +33,6 @@ public class JwtTokenValidator extends OncePerRequestFilter { // Execute the fil
         String jwtToken = request.getHeader(HttpHeaders.AUTHORIZATION);
 
         if (jwtToken != null) {
-
             jwtToken = jwtToken.substring(7);
 
             DecodedJWT decodedJWT = jwtUtil.verifyToken(jwtToken);
